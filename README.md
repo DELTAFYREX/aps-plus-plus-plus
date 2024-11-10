@@ -20,9 +20,9 @@ You'll first need to install [Node.js](https://nodejs.org). It doesn't matter if
 
 Once `Node.js` is installed, open Terminal and run the command `npm i ws`. This will install the WebSocket library that Open Source Arras uses.
 
-After installing `ws`, [download the source code of the latest release of Open Source Arras](https://github.com/Taureon/aps-plus-plus/releases). Extract it once it's downloaded and open either `run.bat` (if you're on Windows) or `run.sh` (if you're not). If there aren't any errors, your server will start up. Go to `localhost:26301` in your favourite web browser (keep the terminal window open, closing it will shut down the server) to play.
+After installing `ws`, [download the source code of the latest release of Open Source Arras](https://github.com/DELTAFYREX/aps-plus-plus-plus/releases). Extract it once it's downloaded and open either `run.bat` (if you're on Windows) or `run.sh` (if you're not). If there aren't any errors, your server will start up. Go to `localhost:26301` in your favourite web browser (keep the terminal window open, closing it will shut down the server) to play.
 
-[If you need a more detailed guide, click here for a step by step list.](https://github.com/Taureon/aps-plus-plus/wiki/Frequently-Asked-Questions#how-do-i-set-up-my-server)
+[If you need a more detailed guide, click here for a step by step list.](https://github.com/DELTAFYREX/aps-plus-plus-plus/wiki/Frequently-Asked-Questions#how-do-i-set-up-my-server)
 
 If you want to stay up to date, fork this template, download a git client, and sync the fork whenever there's a major update.
 
@@ -30,7 +30,7 @@ If you want to stay up to date, fork this template, download a git client, and s
 
 Don't have a supported device or don't want to mess around with localhost? Get a webhost to do the dirty work for you.
 
-Create a new project and choose to import one from GitHub. When prompted for the URL of the repository, type in `https://github.com/Taureon/aps-plus-plus.git`.
+Create a new project and choose to import one from GitHub. When prompted for the URL of the repository, type in `https://github.com/DELTAFYREX/aps-plus-plus-plus.git`.
 
 Navigate to `server/config.js` and replace `localhost:26301` with the URL for your project. (For Glitch users, it's `your-project.glitch.me` (replace `your-project` with the actual name of your project, it should be above settings)).
 
