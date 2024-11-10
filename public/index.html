@@ -26,7 +26,13 @@
     <div id="mainWrapper">
         <div id="startMenuWrapper">
             <div id="startMenu">
-                <div class="startMenuHolder linkHolder"><center>This Arras.io Private Server runs on Open Source Arras.<br>For more info, visit <a href="https://github.com/DELTAFYREX/aps-plus-plus-plus">the GitHub Repository</a>.<br><br>Not an official Arras.io project. We are not associated with Arras.io or Momentum Studios.</center></div>
+                <div class="startMenuHolder linkHolder">
+                <noteslider class="slidingtrigger3">
+                  <iframe src="https://discord.com/widget?id=1305190204600090756&theme=dark" width="350" height="95%" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                  <div id="startMenuSlidingTrigger3"><h3 class="nopadding">view notes ▸</h3></div>
+                  <hr>
+                    <center>This Arras.io Private Server runs on Open Source Arras.<br>For more info, visit <a href="https://github.com/DELTAFYREX/aps-plus-plus-plus">the GitHub Repository</a>.<br><br>Not an official Arras.io project. We are not associated with Arras.io or Momentum Studios.</center></div>
+                  </noteslider>
                 <div class="startMenuHolder">
                     <div class="sliderHolder">
                         <div class="slider" id="startMenuSlidingContent">
@@ -219,9 +225,14 @@
                         <button id="startButton" tabindex="2"><b>Play</b></button>
                     </div>
                 </div>
-                <div class="startMenuHolder shrinkable">
-                    <span class="titleSpan">Changelog</span>
-                    <div id="patchNotes" class="shadowScroll"></div>
+                <div class="startMenuHolder shrinkable" tabindex="1" style="z-index: -7;">
+                    <span class="titleSpan slider2" tabindex="-10" title="Changes And Updates">Changelog</span>
+                    <span class="titleSpan slider3" tabindex="-10" title="Credits And Special Thanks">Credits</span>
+                    <div id="patchNotes" class="shadowScroll slider2"></div>
+                    <div id="credits" class="shadowScroll slider3"></div>
+                    <div id="bottomHolder">
+                        <a class="link" style="width: 200%;" id="startMenuSlidingTrigger2" title="View Changelog/Credits">View Credits</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -245,6 +256,39 @@
         });
         $("#startMenuSlidingTrigger").on('click', function () {
             if ($("#optColors").val() == "custom") document.getElementById("optCustom").type = "text";
+        });
+        var clicked2 = false;
+        $("#startMenuSlidingTrigger2").on('click', function() {
+            clicked2 = !clicked2;
+            if (clicked2) {
+                document.getElementById("startMenuSlidingTrigger2").innerHTML="View Changelog";
+                $(".slider2").css({ "right": "400px" });
+                $(".slider3").css({ "right": "0px" });
+                $(".slider2").css({ "position": "absolute" });
+                $(".slider3").css({ "position": "relative" });
+                $(".slider2").css({ "z-index": "-6" });
+                $(".slider3").css({ "z-index": "0" });
+            } else {
+                document.getElementById("startMenuSlidingTrigger2").innerHTML="View Credits";
+                $(".slider2").css({ "right": "0px" });
+                $(".slider3").css({ "right": "400px" });
+                $(".slider2").css({ "position": "relative" });
+                $(".slider3").css({ "position": "absolute" });
+                $(".slider2").css({ "z-index": "0" });
+                $(".slider3").css({ "z-index": "-6" });
+            }
+        });
+        var clicked3 = false;
+        $("#startMenuSlidingTrigger3").on('click', function() {
+            clicked3 = !clicked3;
+            if (clicked3) {
+                $(this).html('<h3 class="nopadding">close notes ▾</h3>');
+                $(".slidingtrigger3").css({ "top": "-265px" });
+
+            } else {
+                $(this).html('<h3 class="nopadding">open notes ▸</h3>');
+                $(".slidingtrigger3").css({ "top": "0" });
+            }
         });
         if (navigator.serviceWorker) navigator.serviceWorker.register('/service-worker.js', { scope: '/' }).then(registration => console.log('Service Worker Registered'));
     </script>
