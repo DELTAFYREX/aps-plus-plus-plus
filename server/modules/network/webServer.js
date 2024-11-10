@@ -20,12 +20,6 @@ try {
 }
 
 console.log("Web Server initialized.");
-if (Config.host === 'localhost') {
-    util.warn(`[WEB SERVER] config.host is just "localhost", are you sure you don't mean "localhost:${Config.port}"?`);
-}
-if (Config.host.match(/localhost:(\d)/) && Config.host !== 'localhost:' + Config.port) {
-    util.warn('[WEB SERVER] config.host is a localhost domain but its port is different to config.port!');
-}
 
 server = require('http').createServer((req, res) => {
     let resStr = "";
@@ -48,9 +42,6 @@ server = require('http').createServer((req, res) => {
             break;
         case "/lib/json/gamemodeData.json":
             resStr = JSON.stringify({ gameMode: Config.gameModeName, players: views.length });
-            break;
-        case "/serverData.json":
-            resStr = JSON.stringify({ ip: Config.host });
             break;
         default:
             let fileToGet = path.join(publicRoot, req.url);
